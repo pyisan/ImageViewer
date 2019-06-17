@@ -16,7 +16,7 @@ class ImageViewer(QMainWindow):
         self.setWindowTitle("Image Viewer")
         self.setLayout(self.myLayout)
         self.createMenus()
-        self.a = int(input('Please Select: 1) Gallery 2)Slide'))
+        self.a = int(input('Please Select: 1) Gallery 2)Slide: '))
         if self.a == 1:
             self.ImgGallery()
         elif self.a == 2:
