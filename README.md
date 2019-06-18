@@ -1,10 +1,9 @@
 # ImageViewer
 
 ## ScreenShots
-|![](./screenshots/imG1.png)|
-|![](./screenshots/imG2.png)|
-|![](./screenshots/imG3.png)|
-|![](./screenshots/imG4.png)|
+| Gallery Mode | Edit Mode |
+|:-------:|:-------:|
+|![](./screenshots/imG1.png)|![](./screenshots/imG2.png)|
 
 
 ## Manual
