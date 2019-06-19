@@ -19,7 +19,7 @@ class example(QtWidgets.QWidget):
             self.my_list = img_list
             self.my_img = self.my_list[0]
             self.pixmap = QtGui.QPixmap(self.my_img)
-            self.pixmap = self.pixmap.scaled(QtCore.QSize(150, 150))
+            self.pixmap = self.pixmap.scaled(QtCore.QSize(150, 150), QtCore.Qt.KeepAspectRatioByExpanding)
             self.lbl.setPixmap(self.pixmap)
             self.centerOnScreen()
 
@@ -65,13 +65,13 @@ class example(QtWidgets.QWidget):
             prevb = QtWidgets.QPushButton('<< &Previous', self)
             self.hbox.addWidget(prevb)
 
-            prevb.move(30, 130)
+#            prevb.move(30, 130)
             prevb.clicked.connect(self.setPrev)
 
             nextb = QtWidgets.QPushButton('&Next >>', self)
             self.hbox.addWidget(nextb)
 
-            nextb.move (130,130)
+#            nextb.move (130,130)
             nextb.clicked.connect(self.setPrev)
             nextb.setSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
             prevb.setSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
@@ -83,7 +83,7 @@ class example(QtWidgets.QWidget):
     #        self.setGeometry(300, 300, 280, 170)
 
             self.pixmap = QtGui.QPixmap(self.my_img)
-            self.pixmap = self.pixmap.scaled(QtCore.QSize(150, 150))
+            self.pixmap = self.pixmap.scaled(QtCore.QSize(150, 150), QtCore.Qt.KeepAspectRatioByExpanding)
             self.lbl.setPixmap(self.pixmap)
             self.pil_img = Image.open(self.my_img)
             self.lbtex.setText("Format: "+self.pil_img.format+"\n"+ "Size: "+"%dx%d" % self.pil_img.size+"\n" + "Mode: "+self.pil_img.mode)
@@ -128,7 +128,7 @@ class example(QtWidgets.QWidget):
 #            print(now_index, next_index)
             self.my_img = self.my_list[next_index]
             self.pixmap = QtGui.QPixmap(self.my_img)      
-            self.pixmap = self.pixmap.scaled(QtCore.QSize(150, 150))
+            self.pixmap = self.pixmap.scaled(QtCore.QSize(150, 150), QtCore.Qt.KeepAspectRatioByExpanding)
             self.lbl.setPixmap(self.pixmap)
             self.pil_img = Image.open(self.my_img)
             self.lbtex.setText("Format: "+self.pil_img.format+"\n"+ "Size: "+"%dx%d" % self.pil_img.size+"\n" + "Mode: "+self.pil_img.mode)
@@ -144,7 +144,7 @@ class example(QtWidgets.QWidget):
 #            print(now_index, prev_index)
             self.my_img = self.my_list[prev_index]
             self.pixmap = QtGui.QPixmap(self.my_img)      
-            self.pixmap = self.pixmap.scaled(QtCore.QSize(150, 150))
+            self.pixmap = self.pixmap.scaled(QtCore.QSize(150, 150), QtCore.Qt.KeepAspectRatioByExpanding)
             self.lbl.setPixmap(self.pixmap)
             self.pil_img = Image.open(self.my_img)
             self.lbtex.setText("Format: "+self.pil_img.format+"\n"+ "Size: "+"%dx%d" % self.pil_img.size+"\n" + "Mode: "+self.pil_img.mode)
@@ -155,7 +155,7 @@ class example(QtWidgets.QWidget):
         # transformation
         transform = QtGui.QTransform().rotate(90)
         self.pixmap = self.pixmap.transformed(transform, QtCore.Qt.SmoothTransformation)
-        self.pixmap = self.pixmap.scaled(QtCore.QSize(150, 150))
+        self.pixmap = self.pixmap.scaled(QtCore.QSize(150, 150), QtCore.Qt.KeepAspectRatioByExpanding)
         self.lbl.setPixmap(self.pixmap)
 #        self.lbl.show()
 
@@ -164,14 +164,14 @@ class example(QtWidgets.QWidget):
         # transformation
         transform = QtGui.QTransform().rotate(-90)
         self.pixmap = self.pixmap.transformed(transform, QtCore.Qt.SmoothTransformation)
-        self.pixmap = self.pixmap.scaled(QtCore.QSize(150, 150))
+        self.pixmap = self.pixmap.scaled(QtCore.QSize(150, 150), QtCore.Qt.KeepAspectRatioByExpanding)
         self.lbl.setPixmap(self.pixmap)
 
     def sepia_img(self):
         pil_img = self.my_img
         sepiaImg = __sepia__.create_sepia(pil_img)
         self.pixmap = QtGui.QPixmap.fromImage(sepiaImg)
-        self.pixmap = self.pixmap.scaled(QtCore.QSize(150, 150))
+        self.pixmap = self.pixmap.scaled(QtCore.QSize(150, 150), QtCore.Qt.KeepAspectRatioByExpanding)
         self.lbl.setPixmap(self.pixmap)
 
 
